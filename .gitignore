@@ -3,7 +3,6 @@
 /.project
 /.settings
 /assets/css/*.opt.css
-/config.php
 /data/cache/*
 /data/config/config_ini.*.php
 /data/config/diagnostic-*.xml
