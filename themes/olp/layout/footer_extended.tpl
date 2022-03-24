@@ -65,9 +65,3 @@
             </div>
         </div>
     </div>
-    <div class="fix_banner_left">
-        [FIX_BANNER_LEFT]
-    </div>
-    <div class="fix_banner_right">
-        [FIX_BANNER_RIGHT]
-    </div>
