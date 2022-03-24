@@ -4,9 +4,8 @@
 }
 
 .metismenu .arrow {
-    float: right;
-    margin-top: -33px;
-    margin-right: 6px;
+    float: left;
+    margin-top: 5px;
     color: #fff;
     cursor: pointer;
     text-align: center;
@@ -74,10 +73,9 @@
 
 .metismenu .sidebar-nav {
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-    background: #205fa0;
-    background-image: linear-gradient(to right, #2671b5 4px, #205fa0 4px);
     background-repeat: repeat-x;
     margin: 0;
+    background-color: #000;
 }
 
 .metismenu .sidebar-nav ul {
@@ -110,7 +108,6 @@
 
 .metismenu .sidebar-nav ul ul a {
     padding: 10px 30px;
-    background-color: #4189c7;
 }
 
 .metismenu .sidebar-nav ul ul a:hover,
