@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Mar 24, 2022 at 02:46 AM
+-- Generation Time: Mar 24, 2022 at 04:38 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 7.4.28
 
@@ -54,7 +54,7 @@ CREATE TABLE `nv4_authors` (
 --
 
 INSERT INTO `nv4_authors` (`admin_id`, `editor`, `lev`, `files_level`, `position`, `main_module`, `admin_theme`, `addtime`, `edittime`, `is_suspend`, `susp_reason`, `pre_check_num`, `pre_last_login`, `pre_last_ip`, `pre_last_agent`, `check_num`, `last_login`, `last_ip`, `last_agent`) VALUES
-(1, 'ckeditor', 1, 'adobe,archives,audio,documents,flash,images,real,video|1|1|1', 'Administrator', 'siteinfo', '', 0, 0, 0, '', '', 0, '', '', 'b24a0dec0cdd33b4dae0be60dfd08c44', 1648085224, '127.0.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.74 Safari/537.36');
+(1, 'ckeditor', 1, 'adobe,archives,audio,documents,flash,images,real,video|1|1|1', 'Administrator', 'siteinfo', '', 0, 0, 0, '', '', 0, '', '', '760fd35685c8672da5dd0b4fe5f5872c', 1648093025, '127.0.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.74 Safari/537.36');
 
 -- --------------------------------------------------------
 
@@ -439,7 +439,7 @@ INSERT INTO `nv4_config` (`lang`, `module`, `config_name`, `config_value`) VALUE
 ('vi', 'global', 'autologosize3', '30'),
 ('vi', 'global', 'autologomod', ''),
 ('vi', 'global', 'name_show', '0'),
-('vi', 'global', 'cronjobs_next_time', '1648085811'),
+('vi', 'global', 'cronjobs_next_time', '1648093302'),
 ('vi', 'global', 'disable_site_content', 'Vì lý do kỹ thuật website tạm ngưng hoạt động. Thành thật xin lỗi các bạn vì sự bất tiện này!'),
 ('vi', 'seotools', 'prcservice', ''),
 ('vi', 'about', 'auto_postcomm', '1'),
@@ -567,7 +567,9 @@ INSERT INTO `nv4_config` (`lang`, `module`, `config_name`, `config_value`) VALUE
 ('sys', 'global', 'ftp_user_name', ''),
 ('sys', 'global', 'ftp_user_pass', 'QCLPkVag7M8A8SulKVWrGA,,'),
 ('sys', 'global', 'ftp_path', '/'),
-('sys', 'global', 'ftp_check_login', '0');
+('sys', 'global', 'ftp_check_login', '0'),
+('vi', 'translate', 'difftimeout', '3600'),
+('vi', 'translate', 'captcha_type', 'captcha');
 
 -- --------------------------------------------------------
 
@@ -604,9 +606,9 @@ CREATE TABLE `nv4_counter` (
 
 INSERT INTO `nv4_counter` (`c_type`, `c_val`, `last_update`, `c_count`, `vi_count`) VALUES
 ('c_time', 'start', 0, 0, 0),
-('c_time', 'last', 0, 1648085521, 0),
-('total', 'hits', 1648085521, 1, 1),
-('year', '2022', 1648085521, 1, 1),
+('c_time', 'last', 0, 1648093002, 0),
+('total', 'hits', 1648093002, 2, 2),
+('year', '2022', 1648093002, 2, 2),
 ('year', '2023', 0, 0, 0),
 ('year', '2024', 0, 0, 0),
 ('year', '2025', 0, 0, 0),
@@ -617,7 +619,7 @@ INSERT INTO `nv4_counter` (`c_type`, `c_val`, `last_update`, `c_count`, `vi_coun
 ('year', '2030', 0, 0, 0),
 ('month', 'Jan', 0, 0, 0),
 ('month', 'Feb', 0, 0, 0),
-('month', 'Mar', 1648085521, 1, 1),
+('month', 'Mar', 1648093002, 2, 2),
 ('month', 'Apr', 0, 0, 0),
 ('month', 'May', 0, 0, 0),
 ('month', 'Jun', 0, 0, 0),
@@ -650,7 +652,7 @@ INSERT INTO `nv4_counter` (`c_type`, `c_val`, `last_update`, `c_count`, `vi_coun
 ('day', '21', 0, 0, 0),
 ('day', '22', 0, 0, 0),
 ('day', '23', 0, 0, 0),
-('day', '24', 1648085521, 1, 1),
+('day', '24', 1648093002, 2, 2),
 ('day', '25', 0, 0, 0),
 ('day', '26', 0, 0, 0),
 ('day', '27', 0, 0, 0),
@@ -662,7 +664,7 @@ INSERT INTO `nv4_counter` (`c_type`, `c_val`, `last_update`, `c_count`, `vi_coun
 ('dayofweek', 'Monday', 0, 0, 0),
 ('dayofweek', 'Tuesday', 0, 0, 0),
 ('dayofweek', 'Wednesday', 0, 0, 0),
-('dayofweek', 'Thursday', 1648085521, 1, 1),
+('dayofweek', 'Thursday', 1648093002, 2, 2),
 ('dayofweek', 'Friday', 0, 0, 0),
 ('dayofweek', 'Saturday', 0, 0, 0),
 ('hour', '00', 0, 0, 0),
@@ -675,7 +677,7 @@ INSERT INTO `nv4_counter` (`c_type`, `c_val`, `last_update`, `c_count`, `vi_coun
 ('hour', '07', 0, 0, 0),
 ('hour', '08', 1648085521, 1, 1),
 ('hour', '09', 0, 0, 0),
-('hour', '10', 0, 0, 0),
+('hour', '10', 1648093002, 1, 1),
 ('hour', '11', 0, 0, 0),
 ('hour', '12', 0, 0, 0),
 ('hour', '13', 0, 0, 0),
@@ -714,7 +716,7 @@ INSERT INTO `nv4_counter` (`c_type`, `c_val`, `last_update`, `c_count`, `vi_coun
 ('browser', 'iphone', 0, 0, 0),
 ('browser', 'ipod', 0, 0, 0),
 ('browser', 'ipad', 0, 0, 0),
-('browser', 'chrome', 1648085521, 1, 1),
+('browser', 'chrome', 1648093002, 2, 2),
 ('browser', 'cococ', 0, 0, 0),
 ('browser', 'android', 0, 0, 0),
 ('browser', 'googlebot', 0, 0, 0),
@@ -745,7 +747,7 @@ INSERT INTO `nv4_counter` (`c_type`, `c_val`, `last_update`, `c_count`, `vi_coun
 ('os', 'winxp', 0, 0, 0),
 ('os', 'win2000', 0, 0, 0),
 ('os', 'apple', 0, 0, 0),
-('os', 'linux', 1648085521, 1, 1),
+('os', 'linux', 1648093002, 2, 2),
 ('os', 'os2', 0, 0, 0),
 ('os', 'beos', 0, 0, 0),
 ('os', 'iphone', 0, 0, 0),
@@ -988,7 +990,7 @@ INSERT INTO `nv4_counter` (`c_type`, `c_val`, `last_update`, `c_count`, `vi_coun
 ('country', 'ZA', 0, 0, 0),
 ('country', 'ZM', 0, 0, 0),
 ('country', 'ZW', 0, 0, 0),
-('country', 'ZZ', 1648085521, 1, 1),
+('country', 'ZZ', 1648093002, 2, 2),
 ('country', 'unkown', 0, 0, 0);
 
 -- --------------------------------------------------------
@@ -1018,14 +1020,14 @@ CREATE TABLE `nv4_cronjobs` (
 --
 
 INSERT INTO `nv4_cronjobs` (`id`, `start_time`, `inter_val`, `inter_val_type`, `run_file`, `run_func`, `params`, `del`, `is_sys`, `act`, `last_time`, `last_result`, `vi_cron_name`) VALUES
-(1, 1648085107, 5, 0, 'online_expired_del.php', 'cron_online_expired_del', '', 0, 1, 1, 1648085511, 1, 'Xóa các dòng ghi trạng thái online đã cũ trong CSDL'),
+(1, 1648085107, 5, 0, 'online_expired_del.php', 'cron_online_expired_del', '', 0, 1, 1, 1648093002, 1, 'Xóa các dòng ghi trạng thái online đã cũ trong CSDL'),
 (2, 1648085107, 1440, 0, 'dump_autobackup.php', 'cron_dump_autobackup', '', 0, 1, 1, 1648085183, 1, 'Tự động lưu CSDL'),
-(3, 1648085107, 60, 0, 'temp_download_destroy.php', 'cron_auto_del_temp_download', '', 0, 1, 1, 1648085183, 1, 'Xóa các file tạm trong thư mục tmp'),
-(4, 1648085107, 30, 0, 'ip_logs_destroy.php', 'cron_del_ip_logs', '', 0, 1, 1, 1648085183, 1, 'Xóa IP log files, Xóa các file nhật ký truy cập'),
+(3, 1648085107, 60, 0, 'temp_download_destroy.php', 'cron_auto_del_temp_download', '', 0, 1, 1, 1648093002, 1, 'Xóa các file tạm trong thư mục tmp'),
+(4, 1648085107, 30, 0, 'ip_logs_destroy.php', 'cron_del_ip_logs', '', 0, 1, 1, 1648093002, 1, 'Xóa IP log files, Xóa các file nhật ký truy cập'),
 (5, 1648085107, 1440, 0, 'error_log_destroy.php', 'cron_auto_del_error_log', '', 0, 1, 1, 1648085183, 1, 'Xóa các file error_log quá hạn'),
 (6, 1648085107, 360, 0, 'error_log_sendmail.php', 'cron_auto_sendmail_error_log', '', 0, 1, 0, 0, 0, 'Gửi email các thông báo lỗi cho admin'),
-(7, 1648085107, 60, 0, 'ref_expired_del.php', 'cron_ref_expired_del', '', 0, 1, 1, 1648085183, 1, 'Xóa các referer quá hạn'),
-(8, 1648085107, 60, 0, 'check_version.php', 'cron_auto_check_version', '', 0, 1, 1, 1648085183, 1, 'Kiểm tra phiên bản NukeViet'),
+(7, 1648085107, 60, 0, 'ref_expired_del.php', 'cron_ref_expired_del', '', 0, 1, 1, 1648093002, 1, 'Xóa các referer quá hạn'),
+(8, 1648085107, 60, 0, 'check_version.php', 'cron_auto_check_version', '', 0, 1, 1, 1648093002, 1, 'Kiểm tra phiên bản NukeViet'),
 (9, 1648085107, 1440, 0, 'notification_autodel.php', 'cron_notification_autodel', '', 0, 1, 1, 1648085183, 1, 'Xóa thông báo cũ');
 
 -- --------------------------------------------------------
@@ -1118,7 +1120,12 @@ INSERT INTO `nv4_logs` (`id`, `lang`, `module_name`, `name_key`, `note_action`, 
 (1, 'vi', 'login', '[appadmin] Đăng nhập', ' Client IP:127.0.0.1', '', 0, 1648085224),
 (2, 'vi', 'themes', 'Thiết lập giao diện theme: \"olp\"', '', '', 1, 1648085331),
 (3, 'vi', 'themes', 'Kích hoạt theme: \"olp\"', '', '', 1, 1648085333),
-(4, 'vi', 'themes', 'Thiết lập layout theme: \"olp\"', '', '', 1, 1648085579);
+(4, 'vi', 'themes', 'Thiết lập layout theme: \"olp\"', '', '', 1, 1648085579),
+(5, 'vi', 'login', '[appadmin] Đăng nhập Thất bại', ' Client IP:127.0.0.1', '', 0, 1648093009),
+(6, 'vi', 'login', '[appadmin] Đăng nhập', ' Client IP:127.0.0.1', '', 0, 1648093025),
+(7, 'vi', 'modules', 'Thiết lập module mới translate', '', '', 1, 1648093037),
+(8, 'vi', 'modules', 'Sửa module &ldquo;translate&rdquo;', '', '', 1, 1648093062),
+(9, 'vi', 'modules', 'Thứ tự module: translate', '16 -> 1', '', 1, 1648093066);
 
 -- --------------------------------------------------------
 
@@ -1176,6 +1183,13 @@ CREATE TABLE `nv4_sessions` (
   `onl_time` int(11) UNSIGNED NOT NULL DEFAULT 0
 ) ENGINE=MEMORY DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `nv4_sessions`
+--
+
+INSERT INTO `nv4_sessions` (`session_id`, `userid`, `username`, `onl_time`) VALUES
+('9229fb0c5630ec7f385cb0d02876cb81', 1, 'appadmin', 1648093085);
+
 -- --------------------------------------------------------
 
 --
@@ -1218,7 +1232,8 @@ INSERT INTO `nv4_setup_extensions` (`id`, `type`, `title`, `is_sys`, `is_virtual
 (312, 'module', 'freecontent', 0, 1, 'freecontent', 'freecontent', '4.5.01 1636189200', 1648085107, 'VINADES <contact@vinades.vn>', ''),
 (327, 'module', 'two-step-verification', 1, 0, 'two-step-verification', 'two_step_verification', '4.5.01 1636189200', 1648085107, 'VINADES <contact@vinades.vn>', ''),
 (307, 'theme', 'default', 0, 0, 'default', 'default', '4.5.01 1636189200', 1648085107, 'VINADES <contact@vinades.vn>', ''),
-(311, 'theme', 'mobile_default', 0, 0, 'mobile_default', 'mobile_default', '4.5.01 1636189200', 1648085107, 'VINADES <contact@vinades.vn>', '');
+(311, 'theme', 'mobile_default', 0, 0, 'mobile_default', 'mobile_default', '4.5.01 1636189200', 1648085107, 'VINADES <contact@vinades.vn>', ''),
+(0, 'module', 'translate', 0, 0, 'translate', 'translate', '4.5.01 1636189200', 1648093033, 'VKU01', '');
 
 -- --------------------------------------------------------
 
@@ -4358,7 +4373,50 @@ INSERT INTO `nv4_vi_blocks_weight` (`bid`, `func_id`, `weight`) VALUES
 (49, 30, 1),
 (49, 40, 1),
 (50, 4, 1),
-(51, 4, 2);
+(51, 4, 2),
+(16, 66, 1),
+(18, 66, 1),
+(21, 66, 1),
+(11, 66, 1),
+(12, 66, 2),
+(5, 66, 1),
+(6, 66, 2),
+(20, 66, 1),
+(17, 66, 1),
+(15, 66, 1),
+(13, 66, 1),
+(14, 66, 2),
+(7, 66, 1),
+(8, 66, 2),
+(9, 66, 3),
+(10, 66, 4),
+(19, 66, 1),
+(30, 66, 1),
+(28, 66, 1),
+(29, 66, 1),
+(22, 66, 1),
+(23, 66, 2),
+(24, 66, 1),
+(25, 66, 2),
+(26, 66, 3),
+(27, 66, 4),
+(31, 66, 1),
+(32, 66, 1),
+(33, 66, 1),
+(34, 66, 1),
+(35, 66, 2),
+(38, 66, 1),
+(39, 66, 2),
+(40, 66, 1),
+(41, 66, 1),
+(42, 66, 1),
+(43, 66, 1),
+(44, 66, 2),
+(45, 66, 1),
+(46, 66, 2),
+(47, 66, 3),
+(48, 66, 4),
+(49, 66, 1);
 
 -- --------------------------------------------------------
 
@@ -4685,7 +4743,8 @@ INSERT INTO `nv4_vi_modfuncs` (`func_id`, `func_name`, `alias`, `func_custom_nam
 (62, 'sitemap', 'sitemap', 'Sitemap', '', 'siteterms', 0, 0, 0, ''),
 (63, 'main', 'main', 'Main', '', 'two-step-verification', 1, 0, 1, ''),
 (64, 'confirm', 'confirm', 'Confirm', '', 'two-step-verification', 1, 0, 2, ''),
-(65, 'setup', 'setup', 'Setup', '', 'two-step-verification', 1, 0, 3, '');
+(65, 'setup', 'setup', 'Setup', '', 'two-step-verification', 1, 0, 3, ''),
+(66, 'main', 'main', 'Main', '', 'translate', 1, 0, 1, '');
 
 -- --------------------------------------------------------
 
@@ -4846,7 +4905,10 @@ INSERT INTO `nv4_vi_modthemes` (`func_id`, `layout`, `theme`) VALUES
 (64, 'main', 'mobile_default'),
 (65, 'left-main-right', 'default'),
 (65, 'left-main-right', 'olp'),
-(65, 'main', 'mobile_default');
+(65, 'main', 'mobile_default'),
+(66, 'left-main-right', 'default'),
+(66, 'left-main-right', 'olp'),
+(66, 'main', 'mobile_default');
 
 -- --------------------------------------------------------
 
@@ -4883,21 +4945,22 @@ CREATE TABLE `nv4_vi_modules` (
 --
 
 INSERT INTO `nv4_vi_modules` (`title`, `module_file`, `module_data`, `module_upload`, `module_theme`, `custom_title`, `site_title`, `admin_title`, `set_time`, `main_file`, `admin_file`, `theme`, `mobile`, `description`, `keywords`, `groups_view`, `weight`, `act`, `admins`, `rss`, `sitemap`) VALUES
-('about', 'page', 'about', 'about', 'page', 'Giới thiệu', '', '', 1648085107, 1, 1, '', '', '', '', '6', 1, 1, '', 1, 1),
-('news', 'news', 'news', 'news', 'news', 'Tin Tức', '', '', 1648085107, 1, 1, '', '', '', '', '6', 2, 1, '', 1, 1),
-('users', 'users', 'users', 'users', 'users', 'Thành viên', '', 'Tài khoản', 1648085107, 1, 1, '', '', '', '', '6', 3, 1, '', 0, 1),
-('contact', 'contact', 'contact', 'contact', 'contact', 'Liên hệ', '', '', 1648085107, 1, 1, '', '', '', '', '6', 4, 1, '', 0, 1),
-('statistics', 'statistics', 'statistics', 'statistics', 'statistics', 'Thống kê', '', '', 1648085107, 1, 1, '', '', '', 'online, statistics', '6', 5, 1, '', 0, 1),
-('voting', 'voting', 'voting', 'voting', 'voting', 'Thăm dò ý kiến', '', '', 1648085107, 1, 1, '', '', '', '', '6', 6, 1, '', 1, 1),
-('banners', 'banners', 'banners', 'banners', 'banners', 'Quảng cáo', '', '', 1648085107, 1, 1, '', '', '', '', '6', 7, 1, '', 0, 1),
-('seek', 'seek', 'seek', 'seek', 'seek', 'Tìm kiếm', '', '', 1648085107, 1, 0, '', '', '', '', '6', 8, 1, '', 0, 1),
-('menu', 'menu', 'menu', 'menu', 'menu', 'Menu Site', '', '', 1648085107, 0, 1, '', '', '', '', '6', 9, 1, '', 0, 1),
-('feeds', 'feeds', 'feeds', 'feeds', 'feeds', 'RSS-feeds', '', '', 1648085107, 1, 1, '', '', '', '', '6', 10, 1, '', 0, 1),
-('page', 'page', 'page', 'page', 'page', 'Page', '', '', 1648085107, 1, 1, '', '', '', '', '6', 11, 1, '', 1, 0),
-('comment', 'comment', 'comment', 'comment', 'comment', 'Bình luận', '', 'Quản lý bình luận', 1648085107, 0, 1, '', '', '', '', '6', 12, 1, '', 0, 1),
-('siteterms', 'page', 'siteterms', 'siteterms', 'page', 'Điều khoản sử dụng', '', '', 1648085107, 1, 1, '', '', '', '', '6', 13, 1, '', 1, 1),
-('freecontent', 'freecontent', 'freecontent', 'freecontent', 'freecontent', 'Giới thiệu sản phẩm', '', '', 1648085107, 0, 1, '', '', '', '', '6', 14, 1, '', 0, 1),
-('two-step-verification', 'two-step-verification', 'two_step_verification', 'two_step_verification', 'two-step-verification', 'Xác thực hai bước', '', '', 1648085107, 1, 0, '', '', '', '', '6', 15, 1, '', 0, 1);
+('about', 'page', 'about', 'about', 'page', 'Giới thiệu', '', '', 1648085107, 1, 1, '', '', '', '', '6', 2, 1, '', 1, 1),
+('news', 'news', 'news', 'news', 'news', 'Tin Tức', '', '', 1648085107, 1, 1, '', '', '', '', '6', 3, 1, '', 1, 1),
+('users', 'users', 'users', 'users', 'users', 'Thành viên', '', 'Tài khoản', 1648085107, 1, 1, '', '', '', '', '6', 4, 1, '', 0, 1),
+('contact', 'contact', 'contact', 'contact', 'contact', 'Liên hệ', '', '', 1648085107, 1, 1, '', '', '', '', '6', 5, 1, '', 0, 1),
+('statistics', 'statistics', 'statistics', 'statistics', 'statistics', 'Thống kê', '', '', 1648085107, 1, 1, '', '', '', 'online, statistics', '6', 6, 1, '', 0, 1),
+('voting', 'voting', 'voting', 'voting', 'voting', 'Thăm dò ý kiến', '', '', 1648085107, 1, 1, '', '', '', '', '6', 7, 1, '', 1, 1),
+('banners', 'banners', 'banners', 'banners', 'banners', 'Quảng cáo', '', '', 1648085107, 1, 1, '', '', '', '', '6', 8, 1, '', 0, 1),
+('seek', 'seek', 'seek', 'seek', 'seek', 'Tìm kiếm', '', '', 1648085107, 1, 0, '', '', '', '', '6', 9, 1, '', 0, 1),
+('menu', 'menu', 'menu', 'menu', 'menu', 'Menu Site', '', '', 1648085107, 0, 1, '', '', '', '', '6', 10, 1, '', 0, 1),
+('feeds', 'feeds', 'feeds', 'feeds', 'feeds', 'RSS-feeds', '', '', 1648085107, 1, 1, '', '', '', '', '6', 11, 1, '', 0, 1),
+('page', 'page', 'page', 'page', 'page', 'Page', '', '', 1648085107, 1, 1, '', '', '', '', '6', 12, 1, '', 1, 0),
+('comment', 'comment', 'comment', 'comment', 'comment', 'Bình luận', '', 'Quản lý bình luận', 1648085107, 0, 1, '', '', '', '', '6', 13, 1, '', 0, 1),
+('siteterms', 'page', 'siteterms', 'siteterms', 'page', 'Điều khoản sử dụng', '', '', 1648085107, 1, 1, '', '', '', '', '6', 14, 1, '', 1, 1),
+('freecontent', 'freecontent', 'freecontent', 'freecontent', 'freecontent', 'Giới thiệu sản phẩm', '', '', 1648085107, 0, 1, '', '', '', '', '6', 15, 1, '', 0, 1),
+('two-step-verification', 'two-step-verification', 'two_step_verification', 'two_step_verification', 'two-step-verification', 'Xác thực hai bước', '', '', 1648085107, 1, 0, '', '', '', '', '6', 16, 1, '', 0, 1),
+('translate', 'translate', 'translate', 'translate', 'translate', 'Translate', '', 'Translate', 1648093037, 1, 1, '', '', '', '', '6', 1, 1, '', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -5899,6 +5962,51 @@ INSERT INTO `nv4_vi_siteterms_config` (`config_name`, `config_value`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `nv4_vi_translate`
+--
+
+CREATE TABLE `nv4_vi_translate` (
+  `vid` smallint(5) UNSIGNED NOT NULL,
+  `question` varchar(250) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `link` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT '',
+  `acceptcm` int(2) NOT NULL DEFAULT 1,
+  `active_captcha` tinyint(1) UNSIGNED NOT NULL DEFAULT 0,
+  `admin_id` mediumint(8) UNSIGNED NOT NULL DEFAULT 0,
+  `groups_view` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT '',
+  `publ_time` int(11) UNSIGNED NOT NULL DEFAULT 0,
+  `exp_time` int(11) UNSIGNED NOT NULL DEFAULT 0,
+  `act` tinyint(1) UNSIGNED NOT NULL DEFAULT 0,
+  `vote_one` tinyint(1) UNSIGNED NOT NULL DEFAULT 0 COMMENT '0 cho phép vote nhiều lần 1 cho phép vote 1 lần'
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `nv4_vi_translate_rows`
+--
+
+CREATE TABLE `nv4_vi_translate_rows` (
+  `id` mediumint(8) UNSIGNED NOT NULL,
+  `vid` smallint(5) UNSIGNED NOT NULL,
+  `title` varchar(245) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `url` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT '',
+  `hitstotal` int(11) UNSIGNED NOT NULL DEFAULT 0
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `nv4_vi_translate_voted`
+--
+
+CREATE TABLE `nv4_vi_translate_voted` (
+  `vid` smallint(5) UNSIGNED NOT NULL,
+  `voted` text COLLATE utf8mb4_unicode_ci DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `nv4_vi_voting`
 --
 
@@ -6630,6 +6738,26 @@ ALTER TABLE `nv4_vi_siteterms_config`
   ADD UNIQUE KEY `config_name` (`config_name`);
 
 --
+-- Indexes for table `nv4_vi_translate`
+--
+ALTER TABLE `nv4_vi_translate`
+  ADD PRIMARY KEY (`vid`),
+  ADD UNIQUE KEY `question` (`question`);
+
+--
+-- Indexes for table `nv4_vi_translate_rows`
+--
+ALTER TABLE `nv4_vi_translate_rows`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `vid` (`vid`,`title`);
+
+--
+-- Indexes for table `nv4_vi_translate_voted`
+--
+ALTER TABLE `nv4_vi_translate_voted`
+  ADD UNIQUE KEY `vid` (`vid`);
+
+--
 -- Indexes for table `nv4_vi_voting`
 --
 ALTER TABLE `nv4_vi_voting`
@@ -6729,7 +6857,7 @@ ALTER TABLE `nv4_language_file`
 -- AUTO_INCREMENT for table `nv4_logs`
 --
 ALTER TABLE `nv4_logs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `nv4_notification`
@@ -6855,7 +6983,7 @@ ALTER TABLE `nv4_vi_menu_rows`
 -- AUTO_INCREMENT for table `nv4_vi_modfuncs`
 --
 ALTER TABLE `nv4_vi_modfuncs`
-  MODIFY `func_id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
+  MODIFY `func_id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
 
 --
 -- AUTO_INCREMENT for table `nv4_vi_news_1`
@@ -6958,6 +7086,18 @@ ALTER TABLE `nv4_vi_page`
 --
 ALTER TABLE `nv4_vi_siteterms`
   MODIFY `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `nv4_vi_translate`
+--
+ALTER TABLE `nv4_vi_translate`
+  MODIFY `vid` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `nv4_vi_translate_rows`
+--
+ALTER TABLE `nv4_vi_translate_rows`
+  MODIFY `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `nv4_vi_voting`
