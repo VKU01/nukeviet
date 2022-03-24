@@ -143,7 +143,9 @@ function nv_del_content_module($id)
 
         nv_delete_notification(NV_LANG_DATA, $module_name, 'post_queue', $id);
         // homeimgfile
-        nv_deletefile(NV_ROOTDIR . '/' . NV_UPLOADS_DIR . '/' . $module_upload . '/' . ($homeimgfile));
+        if (file_exists()){
+            nv_deletefile(NV_ROOTDIR . '/' . NV_UPLOADS_DIR . '/' . $module_upload . '/' . ($homeimgfile));
+        }
 
         /* conenct to elasticsearch */
         if ($module_config[$module_name]['elas_use'] == 1) {

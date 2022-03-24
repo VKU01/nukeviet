@@ -370,7 +370,19 @@ if ($nv_Request->isset_request('contentid', 'get,post') and $fcheckss == $checks
 
         $rowcontent['hometext'] = $nv_Request->get_title('hometext', 'post', '');
 
-        $rowcontent['homeimgfile'] = $nv_Request->get_title('homeimgfile', 'post', '');
+        if (isset($_FILES, $_FILES['uploadfile'], $_FILES['uploadfile']['tmp_name']) and is_uploaded_file($_FILES['uploadfile']['tmp_name'])) {
+            $upload = new NukeViet\Files\Upload(['images'], $global_config['forbid_extensions'], $global_config['forbid_mimes'], NV_UPLOAD_MAX_FILESIZE, NV_MAX_WIDTH, NV_MAX_HEIGHT);
+         
+            // Thiết lập ngôn ngữ, nếu không có dòng này thì ngôn ngữ trả về toàn tiếng Anh
+            $upload->setLanguage($lang_global);
+            
+            // Tải file lên server
+            $upload_info = $upload->save_file($_FILES['uploadfile'], NV_UPLOADS_DIR .'/'.$module_upload, false, $global_config['nv_auto_resize']);
+            $homeimgfile = $upload_info["basename"];
+            $rowcontent['homeimgfile'] = NV_BASE_SITEURL . NV_UPLOADS_DIR . '/' . $module_upload . '/'.$homeimgfile;
+        }
+        // var_dump($rowcontent['homeimgfile']);
+        // die();
         $rowcontent['homeimgalt'] = $nv_Request->get_title('homeimgalt', 'post', '', 1);
         $rowcontent['sourcetext'] = $nv_Request->get_title('sourcetext', 'post', '');
 
@@ -382,6 +394,7 @@ if ($nv_Request->isset_request('contentid', 'get,post') and $fcheckss == $checks
         $rowcontent['homeimgthumb'] = 0;
         if (!nv_is_url($rowcontent['homeimgfile']) and nv_is_file($rowcontent['homeimgfile'], NV_UPLOADS_DIR . '/' . $module_upload)) {
             $lu = strlen(NV_BASE_SITEURL . NV_UPLOADS_DIR . '/' . $module_upload . '/');
+            
             $rowcontent['homeimgfile'] = substr($rowcontent['homeimgfile'], $lu);
             if (is_file(NV_ROOTDIR . '/' . NV_FILES_DIR . '/' . $module_upload . '/' . $rowcontent['homeimgfile'])) {
                 $rowcontent['homeimgthumb'] = 1;
