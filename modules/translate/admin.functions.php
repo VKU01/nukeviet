@@ -13,7 +13,7 @@ if (!defined('NV_ADMIN') or !defined('NV_MAINFILE') or !defined('NV_IS_MODADMIN'
     exit('Stop!!!');
 }
 
-$submenu['content'] = $lang_module['voting_add'];
+$submenu['content'] = "Thêm dịch";
 
 $allow_func = [
     'main',
@@ -23,7 +23,3 @@ $allow_func = [
 ];
 
 define('NV_IS_FILE_ADMIN', true);
-
-// Document
-$array_url_instruction['main'] = 'https://wiki.nukeviet.vn/nukeviet4:admin:voting';
-$array_url_instruction['content'] = 'https://wiki.nukeviet.vn/nukeviet4:admin:voting#them_tham_do';

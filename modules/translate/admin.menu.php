@@ -13,5 +13,4 @@ if (!defined('NV_ADMIN')) {
     exit('Stop!!!');
 }
 
-$submenu['content'] = $lang_module['voting_add'];
-$submenu['setting'] = $lang_module['setting'];
+$submenu['content'] = 'Thêm';
