@@ -29,15 +29,10 @@
 			<div>
 				<div>
 					<div class="text-white text-center paralax"
-						style="padding:3rem; height: 300px; background-size: cover; background-position: center center; background-image: url(https://lh6.googleusercontent.com/kA2-JkHlI2mXONPdVE-rnDRdJoj1RLY81D-ZZ4uu9BYM8MwMj3dgZGkBb2-Sh0DrdyO2vFGMIx0wHAKR8sJkdM0=w16383);">
+						style="padding:3rem; height: 300px; background-size: cover; background-position: center center; background-image: url({BANNER_SRC});">
 						<div class=""
 							style="border: 4px solid #ffffff; padding: 3rem; height: 100%;width: 100%;align-self: center;display: flex; flex-direction: column; justify-content: center;">
-							<h1 class="" style="font-weight: 700 !important; font-size: 32px;">OLYMPIC TIN HỌC SINH VIÊN
-								VIỆT NAM LẦN THỨ 30
-								& KỲ THI LẬP TRÌNH SINH VIÊN QUỐC TẾ ICPC ASIA HANOI
-							</h1>
-
-							<h2>ĐẠI HỌC FPT, từ 22-25/03/2022</h2>
+							<h1 class="" style="font-weight: 700 !important; font-size: 32px;">{SITE_DESCRIPTION}</h1>
 						</div>
 					</div>
 				</div>
