@@ -44,7 +44,7 @@
 							<input class="hidden" style="display: none;" name="homeimg" id="homeimg"  value="{rowcontent.homeimgfile}"/>
 							<img src="{rowcontent.homeimgfile}" class="{rowcontent.homeimgpreview}" id="homeimgpreview" width="100%" height="100%" />
 							<input id="select-img-post" type="button" value="{GLANG.browse_image}" name="selectimg" class="btn btn-info" /></td>
-					</tr>
+						</tr>
 					<tr>
 						<td>{LANG.content_homeimgalt}</td>
 						<td><input class="form-control" type="text" maxlength="255" value="{rowcontent.homeimgalt}" id="homeimgalt" name="homeimgalt" style="width:100%" /></td>
