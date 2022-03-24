@@ -23,6 +23,8 @@ $(document).ready(function () {
         e.preventDefault();
         modalShow('', '<div class="text-center"><img src="' + $(this).data('src') + '" style="max-width: 100%; height: auto;"/></div>');
     });
+    const previreImg = $('#homeimgpreview').attr('src');
+    if (!previreImg) $('#homeimgpreview').addClass('hidden')
 });
 
 function sendrating(id, point, newscheckss) {
@@ -168,6 +170,7 @@ $('#homeimg').on('change', function () {
 
         reader.onload = function (e) {
             $('#homeimgpreview').attr('src', e.target.result);
+            $('#homeimgpreview').removeClass('hidden')
         }
 
         reader.readAsDataURL(this.files[0]);

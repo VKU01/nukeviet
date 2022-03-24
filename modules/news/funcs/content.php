@@ -8,7 +8,6 @@
  * @license GNU/GPL version 2 or any later version
  * @see https://github.com/nukeviet The NukeViet CMS GitHub project
  */
-
 if (!defined('NV_IS_MOD_NEWS')) {
     exit('Stop!!!');
 }
@@ -50,7 +49,7 @@ $page_url = $base_url = NV_BASE_SITEURL . 'index.php?' . NV_LANG_VARIABLE . '=' 
 $array_post_config = [];
 $sql = 'SELECT group_id, addcontent, postcontent, editcontent, delcontent FROM ' . NV_PREFIXLANG . '_' . $module_data . '_config_post';
 $result = $db->query($sql);
-while (list($group_id, $addcontent, $postcontent, $editcontent, $delcontent) = $result->fetch(3)) {
+while (list ($group_id, $addcontent, $postcontent, $editcontent, $delcontent) = $result->fetch(3)) {
     $array_post_config[$group_id] = [
         'addcontent' => $addcontent,
         'postcontent' => $postcontent,
@@ -250,8 +249,8 @@ if ($nv_Request->isset_request('contentid', 'get,post') and $fcheckss == $checks
             nv_redirect_location($base_url);
         }
 
-        $rowcontent_old = $db->query('SELECT r.* FROM ' . NV_PREFIXLANG . '_' . $module_data . '_rows r 
-            LEFT JOIN ' . NV_PREFIXLANG . '_' . $module_data . '_authorlist a ON r.id=a.id 
+        $rowcontent_old = $db->query('SELECT r.* FROM ' . NV_PREFIXLANG . '_' . $module_data . '_rows r
+            LEFT JOIN ' . NV_PREFIXLANG . '_' . $module_data . '_authorlist a ON r.id=a.id
             WHERE r.id=' . $contentid . ' AND a.aid= ' . $my_author_detail['id'] . ' AND r.status<=' . $global_code_defined['row_locked_status'])->fetch();
         $contentid = (isset($rowcontent_old['id'])) ? (int) ($rowcontent_old['id']) : 0;
 
@@ -322,7 +321,7 @@ if ($nv_Request->isset_request('contentid', 'get,post') and $fcheckss == $checks
     $sql = 'SELECT catid, title, lev FROM ' . NV_PREFIXLANG . '_' . $module_data . '_cat WHERE status IN(' . implode(',', $global_code_defined['cat_visible_status']) . ') ORDER BY sort ASC';
     $result_cat = $db->query($sql);
 
-    while (list($catid_i, $title_i, $lev_i) = $result_cat->fetch(3)) {
+    while (list ($catid_i, $title_i, $lev_i) = $result_cat->fetch(3)) {
         $array_catid_module[] = [
             'catid' => $catid_i,
             'title' => $title_i,
@@ -335,7 +334,7 @@ if ($nv_Request->isset_request('contentid', 'get,post') and $fcheckss == $checks
     $array_topic_module = [];
     $array_topic_module[0] = $lang_module['topic_sl'];
 
-    while (list($topicid_i, $title_i) = $result->fetch(3)) {
+    while (list ($topicid_i, $title_i) = $result->fetch(3)) {
         $array_topic_module[$topicid_i] = $title_i;
     }
 
@@ -348,8 +347,7 @@ if ($nv_Request->isset_request('contentid', 'get,post') and $fcheckss == $checks
         // Xác định giá trị của captcha nhập vào nếu sử dụng reCaptcha
         if ($module_captcha == 'recaptcha') {
             $fcode = $nv_Request->get_title('g-recaptcha-response', 'post', '');
-        }
-        // Xác định giá trị của captcha nhập vào nếu sử dụng captcha hình
+        } // Xác định giá trị của captcha nhập vào nếu sử dụng captcha hình
         elseif ($module_captcha == 'captcha') {
             $fcode = $nv_Request->get_title('fcode', 'post', '');
         }
@@ -371,18 +369,18 @@ if ($nv_Request->isset_request('contentid', 'get,post') and $fcheckss == $checks
         $rowcontent['hometext'] = $nv_Request->get_title('hometext', 'post', '');
 
         if (isset($_FILES, $_FILES['uploadfile'], $_FILES['uploadfile']['tmp_name']) and is_uploaded_file($_FILES['uploadfile']['tmp_name'])) {
-            $upload = new NukeViet\Files\Upload(['images'], $global_config['forbid_extensions'], $global_config['forbid_mimes'], NV_UPLOAD_MAX_FILESIZE, NV_MAX_WIDTH, NV_MAX_HEIGHT);
-         
+            $upload = new NukeViet\Files\Upload([
+                'images'
+            ], $global_config['forbid_extensions'], $global_config['forbid_mimes'], NV_UPLOAD_MAX_FILESIZE, NV_MAX_WIDTH, NV_MAX_HEIGHT);
+
             // Thiết lập ngôn ngữ, nếu không có dòng này thì ngôn ngữ trả về toàn tiếng Anh
             $upload->setLanguage($lang_global);
-            
+
             // Tải file lên server
-            $upload_info = $upload->save_file($_FILES['uploadfile'], NV_UPLOADS_DIR .'/'.$module_upload, false, $global_config['nv_auto_resize']);
+            $upload_info = $upload->save_file($_FILES['uploadfile'], NV_UPLOADS_DIR . '/' . $module_upload, false, $global_config['nv_auto_resize']);
             $homeimgfile = $upload_info["basename"];
-            $rowcontent['homeimgfile'] = NV_BASE_SITEURL . NV_UPLOADS_DIR . '/' . $module_upload . '/'.$homeimgfile;
+            $rowcontent['homeimgfile'] = NV_BASE_SITEURL . NV_UPLOADS_DIR . '/' . $module_upload . '/' . $homeimgfile;
         }
-        // var_dump($rowcontent['homeimgfile']);
-        // die();
         $rowcontent['homeimgalt'] = $nv_Request->get_title('homeimgalt', 'post', '', 1);
         $rowcontent['sourcetext'] = $nv_Request->get_title('sourcetext', 'post', '');
 
@@ -394,7 +392,7 @@ if ($nv_Request->isset_request('contentid', 'get,post') and $fcheckss == $checks
         $rowcontent['homeimgthumb'] = 0;
         if (!nv_is_url($rowcontent['homeimgfile']) and nv_is_file($rowcontent['homeimgfile'], NV_UPLOADS_DIR . '/' . $module_upload)) {
             $lu = strlen(NV_BASE_SITEURL . NV_UPLOADS_DIR . '/' . $module_upload . '/');
-            
+
             $rowcontent['homeimgfile'] = substr($rowcontent['homeimgfile'], $lu);
             if (is_file(NV_ROOTDIR . '/' . NV_FILES_DIR . '/' . $module_upload . '/' . $rowcontent['homeimgfile'])) {
                 $rowcontent['homeimgthumb'] = 1;
@@ -418,10 +416,11 @@ if ($nv_Request->isset_request('contentid', 'get,post') and $fcheckss == $checks
             $error = $lang_module['error_title'];
         } elseif (empty($rowcontent['listcatid'])) {
             $error = $lang_module['error_cat'];
+        } elseif (!empty($upload_info['error'])) {
+            $error = $upload_info['error'];
         } elseif (trim(strip_tags($rowcontent['bodyhtml'])) == '') {
             $error = $lang_module['error_bodytext'];
-        }
-        // Kiểm tra tính hợp lệ của captcha nhập vào, nếu không hợp lệ => thông báo lỗi
+        } // Kiểm tra tính hợp lệ của captcha nhập vào, nếu không hợp lệ => thông báo lỗi
         elseif (isset($fcode) and !nv_capcha_txt($fcode, $module_captcha)) {
             $error = ($module_captcha == 'recaptcha') ? $lang_global['securitycodeincorrect1'] : $lang_global['securitycodeincorrect'];
         } else {
@@ -691,8 +690,7 @@ if ($nv_Request->isset_request('contentid', 'get,post') and $fcheckss == $checks
     // Nếu dùng reCaptcha v3
     if ($module_captcha == 'recaptcha' and $global_config['recaptcha_ver'] == 3) {
         $xtpl->parse('main.recaptcha3');
-    }
-    // Nếu dùng reCaptcha v2
+    } // Nếu dùng reCaptcha v2
     elseif ($module_captcha == 'recaptcha' and $global_config['recaptcha_ver'] == 2) {
         $xtpl->assign('N_CAPTCHA', $lang_global['securitycode1']);
         $xtpl->assign('RECAPTCHA_ELEMENT', 'recaptcha' . nv_genpass(8));

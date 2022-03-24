@@ -176,7 +176,7 @@
 		<label class="col-sm-8 control-label text-normal">{LANG.content_homeimg}:</label>
 		<div class="col-sm-16">
 			<!-- <input class="form-control" name="homeimgfile" id="homeimg" value="{DATA.homeimgfile}" type="text" /> -->
-			<img src="{DATA.homeimgfile}" class="{DATA.homeimgpreview}" id="homeimgpreview" width="100%"
+			<img src="{DATA.homeimgfile}" class="{DATA.hidden_image}" id="homeimgpreview" width="100%"
 				height="100%" />
 				<input class="form-control" type="file" name="uploadfile" id="homeimg" value="{DATA.homeimgfile}">
 			<!-- <input class="form-control" name="homeimgfile" id="homeimg" value="{DATA.homeimgfile}" type="file" /> -->
