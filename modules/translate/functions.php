@@ -12,15 +12,4 @@
 if (!defined('NV_SYSTEM')) {
     exit('Stop!!!');
 }
-
-if (!in_array($op, ['detail', 'result'], true)) {
-    define('NV_IS_MOD_VOTING', true);
-}
-
-if (!empty($array_op)) {
-    unset($matches);
-    if (preg_match("/^result\-([0-9]+)$/", $array_op[0], $matches)) {
-        $id = (int) $matches[1];
-        $op = 'result';
-    }
-}
+define('NV_IS_MOD_VOTING', true);
