@@ -17,8 +17,8 @@
 		<div class="col-xs-5 d-block position-fixed h-100">
 			<div style="position: fixed; height: 100%; background-color: #000; padding: 1.5rem" class="col-xs-5">
 				<div>
-					<a><img src='https://img.vn/uploads/version/img24-png-20190726133727cbvncjKzsQ.png' /></a>
-					<h1 class="text-white">Olympic tin hojc inh vien VN</h1>
+					<a><img src='{LOGO_SRC}' /></a>
+					<h1 class="text-white">{SITE_NAME}</h1>
 				</div>
 				<div>
 					[MENU]

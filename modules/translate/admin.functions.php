@@ -13,13 +13,15 @@ if (!defined('NV_ADMIN') or !defined('NV_MAINFILE') or !defined('NV_IS_MODADMIN'
     exit('Stop!!!');
 }
 
-$submenu['content'] = $lang_module['voting_add'];
+$submenu['add'] = "Them ngon ngu";
+$submenu['add_translate'] = "Them ban dich";
+$submenu['add_key'] = "Them key";
 
 $allow_func = [
     'main',
     'content',
     'del',
-    'setting'
+    'setting', "add", "add_key", "add_translate"
 ];
 
 define('NV_IS_FILE_ADMIN', true);

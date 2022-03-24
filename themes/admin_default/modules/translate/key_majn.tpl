@@ -4,7 +4,7 @@
     <thead>
       <tr>
         <th class="w100">{LANG.voting_id}</th>
-        <th>Teen</th>
+        <th>name</th>
 
         <th class="w250 text-center">{LANG.voting_func}</th>
       </tr>
@@ -12,7 +12,7 @@
     <tbody>
       <!-- BEGIN: loop -->
       <tr>
-        <td class="text-center">{ROW.id}</td>
+        <td class="text-center">{ROW.vid}</td>
         <td>{ROW.name}</td>
         <td class="text-center">
           <a href="{ROW.url_edit}" class="btn btn-default btn-xs"
