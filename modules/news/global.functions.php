@@ -8,13 +8,15 @@
  * @license GNU/GPL version 2 or any later version
  * @see https://github.com/nukeviet The NukeViet CMS GitHub project
  */
-
 if (!defined('NV_MAINFILE')) {
     exit('Stop!!!');
 }
 
 $global_code_defined = [
-    'cat_visible_status' => [1, 2],
+    'cat_visible_status' => [
+        1,
+        2
+    ],
     'cat_locked_status' => 10,
     'row_locked_status' => 20,
     'edit_timeout' => 180
@@ -45,7 +47,7 @@ function nv_set_status_module()
 
     // Dang cai bai cho kich hoat theo thoi gian
     $query = $db->query('SELECT id, listcatid FROM ' . NV_PREFIXLANG . '_' . $module_data . '_rows WHERE status=2 AND publtime < ' . NV_CURRENTTIME . ' ORDER BY publtime ASC');
-    while (list($id, $listcatid) = $query->fetch(3)) {
+    while (list ($id, $listcatid) = $query->fetch(3)) {
         $array_catid = explode(',', $listcatid);
         foreach ($array_catid as $catid_i) {
             $catid_i = (int) $catid_i;
@@ -59,7 +61,7 @@ function nv_set_status_module()
     // Ngung hieu luc cac bai da het han
     $weight_min = 0;
     $query = $db->query('SELECT id, listcatid, archive, weight FROM ' . NV_PREFIXLANG . '_' . $module_data . '_rows WHERE status=1 AND exptime > 0 AND exptime <= ' . NV_CURRENTTIME . ' ORDER BY weight DESC, exptime ASC');
-    while (list($id, $listcatid, $archive, $weight) = $query->fetch(3)) {
+    while (list ($id, $listcatid, $archive, $weight) = $query->fetch(3)) {
         if ((int) $archive == 0) {
             nv_del_content_module($id);
             $weight_min = $weight;
@@ -98,10 +100,15 @@ function nv_set_status_module()
  */
 function nv_del_content_module($id)
 {
-    global $db, $module_name, $module_data, $title, $lang_module, $module_config;
+    global $db, $module_name, $module_data, $title, $lang_module, $module_config, $module_upload;
     $content_del = 'NO_' . $id;
     $title = '';
-    list($id, $listcatid, $title) = $db->query('SELECT id, listcatid, title FROM ' . NV_PREFIXLANG . '_' . $module_data . '_rows WHERE id=' . (int) $id)->fetch(3);
+    $row = $db->query('SELECT * FROM ' . NV_PREFIXLANG . '_' . $module_data . '_rows WHERE id=' . (int) $id)->fetch();
+
+    $id = $row["id"];
+    $listcatid = $row["listcatid"];
+    $title = $row["title"];
+    $homeimgfile = $row["homeimgfile"];
     if ($id > 0) {
         $number_no_del = 0;
         $array_catid = explode(',', $listcatid);
@@ -135,8 +142,10 @@ function nv_del_content_module($id)
         $db->query('DELETE FROM ' . NV_PREFIXLANG . '_' . $module_data . '_authorlist WHERE id = ' . $id);
 
         nv_delete_notification(NV_LANG_DATA, $module_name, 'post_queue', $id);
+        // homeimgfile
+        nv_deletefile(NV_ROOTDIR . '/' . NV_UPLOADS_DIR . '/' . $module_upload . '/' . ($homeimgfile));
 
-        /*conenct to elasticsearch*/
+        /* conenct to elasticsearch */
         if ($module_config[$module_name]['elas_use'] == 1) {
             $nukeVietElasticSearh = new NukeViet\ElasticSearch\Functions($module_config[$module_name]['elas_host'], $module_config[$module_name]['elas_port'], $module_config[$module_name]['elas_index']);
             $nukeVietElasticSearh->delete_data(NV_PREFIXLANG . '_' . $module_data . '_rows', $id);
@@ -147,6 +156,7 @@ function nv_del_content_module($id)
         } else {
             $content_del = 'ERR_' . $lang_module['error_del_content'];
         }
+        nv_deletefile(NV_ROOTDIR . '/' . NV_UPLOADS_DIR . '/' . $module_upload . '/' . ($homeimgfile));
     }
 
     return $content_del;
@@ -182,7 +192,7 @@ function nv_fix_weight_content($weight_min)
 /**
  * nv_archive_content_module()
  *
- * @param int    $id
+ * @param int $id
  * @param string $listcatid
  */
 function nv_archive_content_module($id, $listcatid)
@@ -480,7 +490,7 @@ function nv_remove_block_botcat_news($catid)
  * get_pseudonym_alias()
  *
  * @param string $pseudonym
- * @param int    $aid
+ * @param int $aid
  * @return string
  */
 function get_pseudonym_alias($pseudonym, $aid)

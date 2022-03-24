@@ -25,6 +25,7 @@ if ($listid != '' and NV_CHECK_SESSION == $checkss) {
         $id
     ];
 }
+
 if (!empty($del_array)) {
     $weight_min = 0;
     $sql = 'SELECT id, listcatid, admin_id, title, alias, status, weight FROM ' . NV_PREFIXLANG . '_' . $module_data . '_rows WHERE id IN (' . implode(',', $del_array) . ') ORDER BY weight DESC';

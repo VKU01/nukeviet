@@ -203,6 +203,14 @@ function insertvaluetofield() {
     var path = (imageInfo[7] == "") ? $("span#foldervalue").attr("title") : imageInfo[7];
     var fullPath = nv_base_siteurl + path + "/" + selFile;
 
+    try {
+        $("#homeimgpreview", opener.document).attr('src', fullPath);
+        $("#homeimgpreview", opener.document).removeClass('hidden');
+        console.log(fullPath)
+    } catch (error) {
+        console.log(error)
+    }
+
     if (area != '') {
         $("#" + area, opener.document).val(fullPath);
 
