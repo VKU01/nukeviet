@@ -166,6 +166,7 @@ $rowcontent = [
     'files' => [],
     'homeimgfile' => '',
     'homeimgalt' => '',
+    'homeimgpreview' => 'hidden',
     'homeimgthumb' => '',
     'imgposition' => isset($module_config[$module_name]['imgposition']) ? $module_config[$module_name]['imgposition'] : 1,
     'titlesite' => '',
@@ -1223,6 +1224,7 @@ $lang_global['title_suggest_max'] = sprintf($lang_global['length_suggest_max'], 
 $lang_global['description_suggest_max'] = sprintf($lang_global['length_suggest_max'], 160);
 
 $rowcontent['style_content_bodytext_required'] = $rowcontent['external_link'] ? 'hidden' : '';
+$rowcontent['homeimgpreview'] = empty($rowcontent['homeimgfile']) ? 'hidden' : '';
 
 $xtpl = new XTemplate('content.tpl', NV_ROOTDIR . '/themes/' . $global_config['module_theme'] . '/modules/' . $module_file);
 $xtpl->assign('GLANG', $lang_global);
