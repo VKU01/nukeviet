@@ -24,17 +24,18 @@ if (!nv_function_exists('nv_menu_theme_footer')) {
      */
     function nv_menu_theme_footer_config($module, $data_block, $lang_block)
     { 
-        // $edits = nv_aleditor('bodyhtml', '100%', '400px', $rowcontent['bodyhtml']);
-        if (defined('NV_EDITOR') and nv_function_exists('nv_aleditor')) {
-            $note = nv_aleditor('note', '100%', '150px');
-        } else {
-            $note = '<textarea style="width:100%;height:150px" name="note" id="note">' . $note . '</textarea>';
-        }
-        // $edits = nv_aleditor('bodyhtml', '100%', '450px', '',  '', '', '')
         $html = '<div class="form-group">';
-        $html = '	<label class="control-label col-sm-6">' . $lang_block['footer'] . ':</label>';
-        $html = '	<div class="col-sm-18"> ". $note ."</div>';
-        $html = '</div>';
+        $html .= '	<label class="control-label col-sm-6">Title :</label>';
+        $html .= '	<div class="col-sm-18"><input type="text" name="config_name" class="form-control" value="' . $data_block['name'] . '"/></div>';
+        $html .= '</div>';
+        $html .= '<div class="form-group">';
+        $html .= '	<label class="control-label col-sm-6">Content:</label>';
+        $html .= '	<div class="col-sm-18"><input type="text" name="config_content" class="form-control" value="' . $data_block['content'] . '"/></div>';
+        $html .= '</div>';
+        $html .= '<div class="form-group">';
+        $html .= '	<label class="control-label col-sm-6">Address:</label>';
+        $html .= '	<div class="col-sm-18"><input type="text" name="config_address" class="form-control" value="' . $data_block['address'] . '"/></div>';
+        $html .= '</div>';
 
 
         return $html;
@@ -52,9 +53,9 @@ if (!nv_function_exists('nv_menu_theme_footer')) {
         global $nv_Request;
         $return = [];
         $return['error'] = [];
-        $return['config']['facebook'] = $nv_Request->get_title('config_facebook', 'post');
-        // $return['config']['youtube'] = $nv_Request->get_title('config_youtube', 'post');
-        // $return['config']['twitter'] = $nv_Request->get_title('config_twitter', 'post');
+        $return['config']['name'] = $nv_Request->get_title('config_name', 'post');
+        $return['config']['content'] = $nv_Request->get_title('config_content', 'post');
+        $return['config']['address'] = $nv_Request->get_title('config_address', 'post');
 
         return $return;
     }
